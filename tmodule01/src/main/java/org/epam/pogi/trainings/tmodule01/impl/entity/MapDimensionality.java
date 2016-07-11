@@ -4,10 +4,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.epam.pogi.trainings.tmodule01.api.entity.BaseDimensionality;
 import org.epam.pogi.trainings.tmodule01.api.entity.Dimensionality;
 import org.epam.pogi.trainings.tmodule01.api.entity.Measure;
 
-public class MapDimensionality implements Dimensionality {
+public class MapDimensionality extends BaseDimensionality {
   Map<Measure, Integer> map;
 
   public MapDimensionality(Map<Measure, Integer> map) {
@@ -21,5 +22,6 @@ public class MapDimensionality implements Dimensionality {
   public Collection<Measure> getMeasures() {
     return java.util.Collections.unmodifiableSet( map.keySet() );
   }
+
 
 }

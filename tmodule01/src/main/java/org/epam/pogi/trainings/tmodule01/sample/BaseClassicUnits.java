@@ -1,7 +1,10 @@
 package org.epam.pogi.trainings.tmodule01.sample;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 
+import org.epam.pogi.trainings.tmodule01.api.entity.Measure;
 import org.epam.pogi.trainings.tmodule01.api.entity.Unit;
 import org.epam.pogi.trainings.tmodule01.impl.entity.SimpleUnit;
 
@@ -11,7 +14,7 @@ public class BaseClassicUnits {
       "The distance travelled by light in vacuum in 1/299792458 second.", BaseClassicDimensionalities.LENGTH,
       BigDecimal.valueOf( 1L ) );
 
-  public static Unit KILOGRAMM = new SimpleUnit( "kg", "kilogram", "The mass of the international prototype kilogram",
+  public static Unit KILOGRAM = new SimpleUnit( "kg", "kilogram", "The mass of the international prototype kilogram",
       BaseClassicDimensionalities.MASS, BigDecimal.valueOf( 1L ) );
 
   public static Unit SECOND =
@@ -46,4 +49,16 @@ public class BaseClassicUnits {
           "The luminous intensity, in a given direction, of a source that emits monochromatic radiation of frequency 5.4×1014 hertz and that has a radiant intensity in that direction of 1/683 watt per steradian",
           BaseClassicDimensionalities.LUMINOUS_INTENCITY, BigDecimal.valueOf( 1L ) );
 
+  public static Set<Unit> units;
+  static {
+    HashSet<Unit> tmp = new HashSet<Unit>();
+    tmp.add( METER );
+    tmp.add( KILOGRAM );
+    tmp.add( SECOND );
+    tmp.add( AMPERE );
+    tmp.add( KELVIN );
+    tmp.add( MOLE );
+    tmp.add( CANDELA );
+    units = java.util.Collections.unmodifiableSet( tmp );
+  }
 }

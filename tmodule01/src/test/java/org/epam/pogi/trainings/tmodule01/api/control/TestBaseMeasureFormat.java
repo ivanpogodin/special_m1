@@ -31,6 +31,6 @@ public class TestBaseMeasureFormat {
     BaseMeasureFormat format = new BaseMeasureFormat(mSet);
     
     Assert.assertEquals( m1, format.parseObject( "asdfsdf" ) );
-    Assert.assertEquals( m1, format.parseObject( "asdfsd" ) );
+    Assert.assertEquals( m1, format.parseObject( "asdfsdf" ) );
   }
 }
